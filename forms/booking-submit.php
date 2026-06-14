@@ -1,0 +1,8 @@
+<?php
+require_once __DIR__ . '/../includes/db.php';
+require_once __DIR__ . '/../includes/functions.php';
+if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !verify_csrf($_POST['csrf_token'] ?? null)) { http_response_code(403); die('Invalid request.'); }
+$fields=['full_name','phone','city','package_type','number_of_persons','preferred_travel_date','pickup_city','room_preference']; foreach($fields as $f){ if(!post_value($f)){ die('Please complete all required fields.'); }}
+$stmt=db()->prepare('INSERT INTO bookings (full_name,phone,cnic,city,package_type,number_of_persons,preferred_travel_date,pickup_city,room_preference,special_request,emergency_contact) VALUES (?,?,?,?,?,?,?,?,?,?,?)');
+$stmt->execute([post_value('full_name'),post_value('phone'),post_value('cnic') ?: null,post_value('city'),post_value('package_type'),(int)post_value('number_of_persons'),post_value('preferred_travel_date'),post_value('pickup_city'),post_value('room_preference'),post_value('special_request'),post_value('emergency_contact') ?: null]);
+?><!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Booking Received</title><script src="https://cdn.tailwindcss.com"></script></head><body class="bg-slate-100"><div class="mx-auto mt-24 max-w-xl rounded-2xl bg-white p-8 text-center shadow"><h1 class="text-2xl font-black text-green-700">Thank you. Your booking request has been received. Our team will contact you shortly.</h1><a class="mt-6 inline-block rounded-full bg-blue-950 px-5 py-3 font-bold text-white" href="../index.php">Back to Website</a></div></body></html>
