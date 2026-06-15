@@ -51,3 +51,11 @@ After login, admin users can manage public-facing content without editing code:
 - **Social Links**: update Facebook, Instagram, TikTok, Pinterest, YouTube, or any other platform URL and Font Awesome icon class.
 
 For best speed and SEO, compress gallery images before uploading them to `/assets/images/` and use descriptive titles/captions in the admin dashboard.
+- `admin/` — protected admin login, dashboard, bookings, contacts, and admin user management.
+- `includes/` — configuration, database connection, reusable security helpers.
+- `assets/css/style.css` — custom premium styling and animations.
+- `assets/js/main.js` — menu, modal, and scroll interactions.
+- `database.sql` — tables and default admin users.
+
+## Notes
+The Group / Normal Package final discounted price is **PKR 26,000 per head only**. Personal shopping, extra personal food, room service, and personal expenses are not included.
