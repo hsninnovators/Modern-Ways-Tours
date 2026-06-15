@@ -33,6 +33,24 @@ Update `WHATSAPP_NUMBER` in `/includes/config.php`. The current number is `92335
 - `index.php` — public single-page website.
 - `modal-forms.php` — contact and booking popup forms.
 - `forms/` — form submit handlers that save to MySQL.
+- `admin/` — protected admin login, dashboard, bookings, contacts, package manager, gallery/video manager, social link manager, and admin user management.
+- `includes/` — configuration, database connection, reusable security helpers.
+- `assets/css/style.css` — custom premium styling and animations.
+- `assets/js/main.js` — menu, modal, and scroll interactions.
+- `database.sql` — tables, default admin users, default packages, gallery/video items, and social links.
+
+## Notes
+The Group / Normal Package final discounted price is **PKR 26,000 per head only**. Personal shopping, extra personal food, room service, and personal expenses are not included.
+
+
+## Managing Website Content
+After login, admin users can manage public-facing content without editing code:
+
+- **Packages**: add, edit, reorder, activate/inactivate, or remove package cards shown on the home page.
+- **Gallery & Videos**: add destination images from `/assets/images/` or video embed URLs, update captions, reorder media, hide older media, or remove items.
+- **Social Links**: update Facebook, Instagram, TikTok, Pinterest, YouTube, or any other platform URL and Font Awesome icon class.
+
+For best speed and SEO, compress gallery images before uploading them to `/assets/images/` and use descriptive titles/captions in the admin dashboard.
 - `admin/` — protected admin login, dashboard, bookings, contacts, and admin user management.
 - `includes/` — configuration, database connection, reusable security helpers.
 - `assets/css/style.css` — custom premium styling and animations.
